@@ -1,17 +1,13 @@
-.container {
-    width: 600px;
-    height: 600px;
-}
+*{margin: 0; padding: 0; box-sizing: border-box;}
 
-.row {
+.container {
     display: flex;
-    justify-content: center;
-    
+    flex-wrap: wrap;
+    background-color: wheat;
+    margin: 100px auto;
 }
 
 .cell {
-    width: 10px;
-    height: 10px;
     border: 1px solid red;
 }
 

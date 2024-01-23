@@ -14,24 +14,23 @@ button.addEventListener('click', () => {
 })
 body.append(button)
 
+const gridSize = 600;
+
 let container = document.createElement("div")
 container.classList.add("container")
+container.style.width = `${gridSize}px`
+container.style.height = `${gridSize}px`
 body.append(container)
 
-
 function generateGrid(size) {
-    for (let i = 0; i < size; i++){
-        let row = document.createElement("div");
-        row.classList.add("row")
-        for(let i = 0; i < size; i++) {
-            let div = document.createElement("div")
-            div.classList.add("cell")
-            div.addEventListener('mouseover', () => {
-                div.classList.add("cell-hovered")
-            })
-            row.append(div)
-        }
-        container.append(row)
+    for (let i = 0; i < (size * size); i++){
+        let div = document.createElement("div")
+        div.classList.add("cell")
+        div.style.width = `${gridSize / size}px`
+        div.addEventListener('mouseover', () => {
+            div.classList.add("cell-hovered")
+        })
+        container.append(div)
     }
 }
 
